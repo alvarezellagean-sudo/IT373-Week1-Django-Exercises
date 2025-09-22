@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+  <div class="about-wrapper">
+    <div class="about-card">
+      <h2 class="about-header">👋 About Me</h2>
+      <div class="about-details">
+        <p><span class="label">Name:</span> {{ name }}</p>
+        <p><span class="label">Student ID:</span> {{ student_id }}</p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .about-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      background: #f2f6fc;
+      padding: 40px 20px;
+    }
+
+    .about-card {
+      background: #ffffff;
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-header {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .about-details p {
+      font-size: 1.1rem;
+      margin: 15px 0;
+      color: #444;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #1f2937;
+      margin-right: 10px;
+      display: inline-block;
+      min-width: 100px;
+    }
+  </style>
+{% endblock %}

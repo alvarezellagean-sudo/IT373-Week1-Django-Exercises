@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+  <div class="home-container">
+    <hr class="divider">
+
+    <p class="intro-text">My First Django Project!</p>
+
+    <div class="link-container">
+      <a class="styled-link" href="{% url 'about' %}">About Me</a>
+    </div>
+
+    <hr class="divider">
+  </div>
+
+  <style>
+    .home-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdfdfd;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .intro-text {
+      font-weight: 600;
+      font-size: 1.5em;
+      text-align: center;
+      color: #2c3e50;
+      margin: 30px 0;
+    }
+
+    .link-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .styled-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .styled-link:hover {
+      background-color: #2980b9;
+    }
+
+    .divider {
+      border: none;
+      height: 1px;
+      background-color: #e0e0e0;
+      margin: 20px 0;
+    }
+  </style>
+{% endblock %}
