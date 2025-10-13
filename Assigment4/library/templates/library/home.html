@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Library</title>
+    <link rel="stylesheet" href="{% static 'library/style.css' %}">
+</head>
+<body>
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/admin/">Admin</a>
+</nav>
+
+<div class="container">
+    <h1>All Books</h1>
+    <ul class="book-list">
+        {% for book in books %}
+            <li>
+                <strong class="book-title">{{ book.title }}</strong> by <span class="book-author">{{ book.author.name }}</span>
+                <p class="book-meta">
+                    Categories: 
+                    {% for cat in book.categories.all %}
+                        <span class="book-category">{{ cat.name }}</span>{% if not forloop.last %}, {% endif %}
+                    {% empty %}
+                        <span class="book-category">None</span>
+                    {% endfor %}
+                    <br>
+                    Published: <span class="book-published">{{ book.published }}</span>
+                </p>
+            </li>
+        {% empty %}
+            <li>No books available.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>All Categories</h2>
+    <ul class="category-list">
+        {% for category in categories %}
+            <li>{{ category.name }}</li>
+        {% empty %}
+            <li>No categories available.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>
