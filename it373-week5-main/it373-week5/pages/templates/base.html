@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <nav class="nav-links">
+                <a href="{% url 'home' %}">Home</a> |
+                <a href="{% url 'about' %}">About</a> |
+                <a href="{% url 'gallery' %}">Gallery</a> |
+                <a href="{% url 'post_list' %}">Posts</a> |
+                <a href="{% url 'post_create' %}">Create</a> 
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
