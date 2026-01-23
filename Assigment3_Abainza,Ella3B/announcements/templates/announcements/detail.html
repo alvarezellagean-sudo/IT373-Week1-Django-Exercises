@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements</title>
+    <link rel="stylesheet" href="{% static 'announcements/css/styles.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="container">
+        <h1>Announcements</h1>
+        <ul>
+            <!-- First Announcement -->
+            <li class="announcement-item">
+                <h2>First Announcement</h2>
+                <p id="preview-1" class="preview" style="display:none;">This is the preview of the first announcement...</p>
+                <div id="full-1" class="full-content" style="display:block;">
+                    <p>This is the first full announcement</p> <!-- Edit this text -->
+                    <p class="extra-msg">Here’s the full announcement.</p>
+                </div>
+                <button onclick="toggleReadMore('1')" id="btn-1" class="toggle-btn">Show Less ⬆️</button>
+            </li>
+
+            <!-- Second Announcement -->
+            <li class="announcement-item">
+                <h2>Second Announcement</h2>
+                <p id="preview-2" class="preview" style="display:none;">This is the preview of the second announcement...</p>
+                <div id="full-2" class="full-content" style="display:block;">
+                    <p>This is the second full announcement</p> <!-- Edit this text -->
+                    <p class="extra-msg">Here’s the full announcement.</p>  
+                </div>
+                <button onclick="toggleReadMore('2')" id="btn-2" class="toggle-btn">Show Less ⬆️</button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- External JS -->
+    <script src="{% static 'announcements/js/toggle.js' %}"></script>
+</body>
+</html>

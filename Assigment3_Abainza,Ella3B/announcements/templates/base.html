@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}Home{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'announcements/css/styles.css' %}">
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/announcements/">Announcements</a>
+  </nav>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
